@@ -48,11 +48,10 @@ Write me a static Java method that takes an array of integers and finds the maxi
 Syntax: Compiles successfully  
 Null Safety: If the user passes in null for nums, nums.length will induce a crash with NullPointerException  
 Precision Clarification: The output is truncated to an integer, instead of providing a decimal.  
-Boundary Conditions: If the array is empty, since the for loop initializes i = 1, the program will crash with a ArrayOutOfBoundsException.  
-Division-By-Zero: If the user passes in an array with no elements, it will induce an ArithmeticException. 
+Division-By-Zero: If the user passes in an array with no elements, it will induce an ArithmeticException by attempting to access nums[0].
 
 # 5) Revised Prompt: 
-The response has four issues: 1) if the user passes in null, nums.length induces an exception. 2) the output should be a decimal, cast it to a double first 3) if the user passes in an array with no elements, an ArithmeticException occurs. Add guard checks to see if the array is empty, return 0.0 instead. 4) When a user passes in an empty array, num[1] will induce an ArrayOutOfBoundsException. This should also be covered with the guard check  
+The response has four issues: 1) if the user passes in null, nums.length induces an exception. 2) the output should be a decimal, cast it to a double first 3) if the user passes in an array with no elements, an ArithmeticException occurs by attempting to access nums[0]. Add guard checks to see if the array is empty, return 0.0 instead. 
 
 # Corrected Response: 
 ```public static double findMaxDividedByLength(int[] nums) {
