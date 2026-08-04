@@ -1,0 +1,36 @@
+Task 2 - Valid Row 
+
+membership_status|
+-----------------+
+ACTIVE           |
+
+Task 2 - Invalid CHECK 
+
+SQL Error [23514]: ERROR: new row for relation "books" violates check constraint "publishing_constraint"
+  Detail: Failing row contains (15, hi, authorauthor, 1200, cool category).
+
+Task 2 - Invalid status 
+
+SQL Error [23514]: ERROR: new row for relation "members" violates check constraint "membership_valid_constraint"
+  Detail: Failing row contains (15, New Seoky, newseoky@gmail.com, 2026-08-03 21:51:02.387953, BLOCKED).
+
+Error position:
+
+Task 3 - Cascade DELETE 
+
+Before deleting book: 
+book_id|member_id|loan_date              |return_date|
+-------+---------+-----------------------+-----------+
+     15|       15|2026-08-03 22:06:29.641|           |
+
+After deleting book: 
+book_id|member_id|loan_date|return_date|
+-------+---------+---------+-----------+
+
+Task 3 - Cascade RESTRICT 
+
+SQL Error [23001]: ERROR: update or delete on table "members" violates RESTRICT setting of foreign key constraint "loans_fkey_members" on table "loans"
+  Detail: Key (member_id)=(15) is referenced from table "loans".
+
+
+
